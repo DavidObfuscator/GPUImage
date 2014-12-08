@@ -29,6 +29,7 @@
 
 @synthesize rawBytesForImage = _rawBytesForImage;
 @synthesize newFrameAvailableBlock = _newFrameAvailableBlock;
+@synthesize newFrameAvailableBlockWithTime = _newFrameAvailableBlockWithTime;
 @synthesize enabled;
 
 #pragma mark -
@@ -188,6 +189,10 @@
     if (_newFrameAvailableBlock != NULL)
     {
         _newFrameAvailableBlock();
+    }
+    if (_newFrameAvailableBlockWithTime != NULL)
+    {
+        _newFrameAvailableBlockWithTime(frameTime);
     }
 }
 
